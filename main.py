@@ -1,7 +1,7 @@
 import smtplib
 from email.message import EmailMessage
 from datetime import date, timedelta
-from psw import password
+from pword import password
 import pickle
 
 def cronjob():
