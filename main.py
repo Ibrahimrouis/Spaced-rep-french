@@ -16,7 +16,7 @@ def cronjob():
     for key,value in logs.items():
         for k,v in logs[key].items():
             if v==today:
-                result=result+'\t'+key+'\t: '+k+'\n')
+                result=result+'\t'+key+'\t: '+k+'\n'
     if result!='':
         msg = EmailMessage()
         msg.set_content('Pages list for today, '+today+' : \n'+result)
