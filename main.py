@@ -1,6 +1,7 @@
 import smtplib
 from email.message import EmailMessage
-from datetime import date, timedelta
+from datetime import date,datetime
+
 ## from pword import password ## this is for git-crypt ## gpg not compatible with heroku
 import pickle
 import os
@@ -11,6 +12,7 @@ def cronjob():
     The main cronjob to be run continuously.
     """
     print("Cron job is running")
+    print('Tick! The time is: %s' % datetime.now())
     logs = pickle.load(open('./planning.pkl', 'rb'),encoding='latin1')
     today=date.today()
     result=''
