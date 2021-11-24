@@ -51,3 +51,4 @@ for i in range(4,len(order)):
 
 
 pickle.dump( logs, open( "planning.pkl", "wb" ) )
+print("planning file created")
