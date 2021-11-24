@@ -1,8 +1,9 @@
 import smtplib
 from email.message import EmailMessage
 from datetime import date, timedelta
-from pword import password
+## from pword import password ## this is for git-crypt ## gpg not compatible with heroku
 import pickle
+import os
 
 def cronjob():
     """
@@ -26,7 +27,7 @@ def cronjob():
         msg['Subject'] = f'Spaced Rep French'
         msg['From'] = me
         msg['To'] = you
-        login, pswd = 'ibrahim.rouis@yahoo.com',password
+        login, pswd = 'ibrahim.rouis@yahoo.com',os.environ['PASSWORD']
 
         # Send the message via our own SMTP server.
         s = smtplib.SMTP_SSL(host='smtp.mail.yahoo.com')
